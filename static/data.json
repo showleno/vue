@@ -1,0 +1,81 @@
+{
+    "data": {
+        "start_page": [
+            {
+                "img": "startPage.jpg"
+            }
+        ],
+        "icon_list": [
+            {
+                "img": "new_icon.png",
+                "title": "新品到着",
+                "type": "new"
+            },
+            {
+                "img": "clothes.png",
+                "title": "人气搭配",
+                "type": "hots"
+            },
+            {
+                "img": "sale.png",
+                "title": "折扣专区",
+                "type": "sales"
+            },
+            {
+                "img": "nav.png",
+                "title": "全部分类",
+                "type": "all"
+            }
+        ],
+        "nav": [
+            {
+                "img": "t-shirt.jpg",
+                "type": "t-shirt"
+            },
+            {
+                "img": "weiyi.jpg",
+                "type": "fleece"
+            },
+            {
+                "img": "chenshan.jpg",
+                "type": "shirt"
+            },
+            {
+                "img": "jiake.jpg",
+                "type": "jacket"
+            },
+            {
+                "img": "shoes.jpg",
+                "type": "shoes"
+            },
+            {
+                "img": "waitao.jpg",
+                "type": "coat"
+            },
+            {
+                "img": "xiuxianku.jpg",
+                "type": "pants"
+            },
+            {
+                "img": "niuzaiku.jpg",
+                "type": "pants"
+            },
+            {
+                "img": "bags.jpg",
+                "type": "jeans"
+            },
+            {
+                "img": "hats.jpg",
+                "type": "hats"
+            },
+            {
+                "img": "watch.jpg",
+                "type": "watch"
+            },
+            {
+                "img": "wears.jpg",
+                "type": "wears"
+            }
+        ]
+    }
+}
