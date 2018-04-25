@@ -10,6 +10,7 @@ import FontIcon from '@/components/font-icon.vue';
 import VueLazyload from 'vue-lazyload';
 import '@/assets/css/iconfont.css'
 import '@/assets/lib/iconfont.js'
+import store from '../vuex/store.js'
 
 Vue.use(VueLazyload)
 
@@ -23,6 +24,7 @@ Vue.use(VueLazyload, {
 Vue.config.productionTip = false
 Vue.component('SvgIcon', SvgIcon);
 Vue.component('FontIcon', FontIcon);
+// 监听
 window.eventAllData = new Vue();
 window.eventBottomData = new Vue();
 
@@ -30,6 +32,7 @@ window.eventBottomData = new Vue();
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })

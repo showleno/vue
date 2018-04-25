@@ -19,16 +19,16 @@
         backgroundImage:  'url(static/img/'+start_img+')' }">
             <section class="selectNav">
                 <ul>
-                    <li>
+                    <li @click="getType('boys')" >
                         <router-link to="/boys">男生 Boys</router-link>
                     </li>
-                    <li>
+                    <li @click="getType('girls')">
                         <router-link to="/girls">女生 GIrl</router-link>
                     </li>
-                    <li>
+                    <li @click="getType('boys')">
                         <router-link to="/kids">潮童 Kids</router-link>
                     </li>
-                    <li>
+                    <li @click="getType('boys')">
                         <router-link to="/lifestyle">创意生活 LifeStyle</router-link>
                     </li>
                 </ul>
@@ -40,6 +40,7 @@
 </template>
 <script>
 import axios from 'axios'
+import { mapMutations } from 'vuex'
 export default {
     name: 'StartPage',
     data() {
@@ -49,6 +50,11 @@ export default {
         }
     },
     methods: {
+        // 利用时间改变session的type值
+        getType (type) {
+            this.$store.commit('getType',type)
+            // window.sessionStorage.setItem('type',type);
+        }
     },
     mounted() {
         axios.get('static/data.json')

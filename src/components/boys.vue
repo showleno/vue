@@ -5,7 +5,7 @@
       <section class="icons-list">
         <ul>
           <li v-for="list in icon_list" :key="list.id">
-            <router-link :to="'/list/'+list.type">
+            <router-link to="/list">
               <img v-lazy="'static/img/'+list.img" alt="">
               <h3>{{ list.title }}</h3>
             </router-link>
@@ -41,7 +41,6 @@
       <HotRecommended />
       <div class="h14"></div>
       <YouLike />
-      <Footer :pathName=pathName />
   </main>
 </template>
 <script>
@@ -71,6 +70,7 @@ export default {
       }
   },
   mounted() {
+    console.log(this.$store.state.type)
       axios.get('https://easy-mock.com/mock/5ac1e379cb45541720f42424/vue/boys')
     .then( (res)=> {
       // icon

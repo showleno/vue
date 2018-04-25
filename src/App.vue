@@ -1,8 +1,11 @@
 <template>
+  <keep-alive>
   <div id="app">
     <Header/>
     <router-view />
+    <Footer />
   </div>
+  </keep-alive>
 </template>
 <script>
 import StartPage from './components/StartPage'
@@ -15,6 +18,15 @@ export default {
     'StartPage': StartPage,
     'Footer': Footer,
     'Header': Header,
+  },
+  mounted () {
+    // 每次页面刷新，检查session里的type值
+    let localType = window.sessionStorage.getItem('type');
+    if(localType && localType ==  this.$store.state.type ) {
+        this.$store.commit('getType',localType)
+    }else {
+        this.$store.commit('getType',localType)// 同步操作
+    }
   }
 }
 </script>

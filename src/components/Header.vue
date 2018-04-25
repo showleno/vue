@@ -4,7 +4,7 @@
             <font-icon id="icon--xinxi" class="icon"></font-icon>
         </div>
         <div class="center">
-            <router-link to="/" class="logo">
+            <router-link :to="'/'+$store.state.type" class="logo">
                 <img src="../assets/logo.png" alt="">
             </router-link>
         </div>
