@@ -1,5 +1,5 @@
 <template>
-    <header class="header">
+    <header :class="header ">
         <div class="left">
             <font-icon id="icon--xinxi" class="icon"></font-icon>
         </div>
@@ -15,7 +15,22 @@
 </template>
 <script>
 export default {
-  name: 'Header'
+  name: 'Header',
+  data () {
+      return {
+          position: null
+      }
+  },
+  mounted () {
+      window.onscroll = function () {
+          if ( document.body.scrollTop > 100 || document.documentElement.scrollTop > 100 ) {
+              console.log('进来了', this.position)
+              this.position = 'fixed';
+          }else {
+              this.position = null;
+          }
+      }
+  }
 }
 </script>
 <style scoped>
@@ -26,6 +41,11 @@ export default {
         justify-content: space-between;
         align-items: center;
         height: 3.125rem;
+        position: relative;
+    }
+    .active {
+        position: fixed;
+        top: 0;
     }
     .left, .right {
         width: 15%;

@@ -1,63 +1,49 @@
 <template>
   <footer class="footer">
       <ul>
-          <li v-for="botNav in pathName" :key="botNav.id" :class="{ 'active' : isActive == botNav.path }" @click="router_hop">
-              <router-link :to="botNav.url">
-                  <font-icon :id="botNav.icon" class="icon"></font-icon>
-                    <p>{{botNav.title}}</p>
+          <li :class="{ 'active' : 
+          this.$route.path == '/boys' ||
+           this.$route.path == '/girls' || 
+           this.$route.path == '/kids'
+          }">
+              <router-link :to="'/'+$store.state.type">
+                  <font-icon id="icon-shouye" class="icon"></font-icon>
+                      <p>首页</p>
               </router-link>
           </li>
-          <!-- <li :class="{ 'active' : isActive == 'list' }" @click="router_hop">
+          <li :class="{ 'active' : this.$route.path == '/list' }" >
               <router-link to="/list">
                   <font-icon id="icon-biaoqian" class="icon"></font-icon>
                       <p>分类</p>
               </router-link>
           </li>
-          <li :class="{ 'active' : isActive == 'shop' }" @click="router_hop">
+          <li :class="{ 'active' : this.$route.path == '/shop' }">
               <router-link to="/shop">
                   <font-icon id="icon-sousuo" class="icon"></font-icon>
                       <p>逛</p>
               </router-link>
           </li>
-          <li :class="{ 'active' : isActive == 'cart' }" @click="router_hop">
+          <li :class="{ 'active' : this.$route.path == '/cart' }">
               <router-link to="/cart">
                   <font-icon id="icon-gouwuche" class="icon"></font-icon>
                       <p>购物车</p>
               </router-link>
           </li>
-          <li :class="{ 'active' : isActive == 'mine' }" @click="router_hop">
+          <li :class="{ 'active' : this.$route.path == '/mine' }">
               <router-link to="/mine">
                   <font-icon id="icon-wo" class="icon"></font-icon>
                       <p>我的</p>
               </router-link>
-          </li> -->
+          </li>
       </ul>
   </footer>
 </template>
 <script>
 export default {
   name: "Footer",
-  props: ['pathName'],
-  data () {
-      return {
-          isActive: null,
-      }
-  },
   mounted() {
-      if( this.$route.path == '/boys' || this.$route.path == '/girls' ) {
-                    this.isActive = 'home'
-        }else if ( this.$route.path == '/list' || this.$route.path == '/list' ) {
-                    this.isActive = 'list'
-        }
   },
   methods: {
-      router_hop () {
-            // if( this.$route.path == '/boys' || this.$route.path == '/girls' ) {
-            //             this.isActive = 'home'
-            // }else if ( this.$route.path == '/list' || this.$route.path == '/list' ) {
-            //             this.isActive = 'list'
-            // }
-      }
   }
 }
 </script>

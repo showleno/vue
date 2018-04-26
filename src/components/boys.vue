@@ -70,7 +70,6 @@ export default {
       }
   },
   mounted() {
-    console.log(this.$store.state.type)
       axios.get('https://easy-mock.com/mock/5ac1e379cb45541720f42424/vue/boys')
     .then( (res)=> {
       // icon
