@@ -3,7 +3,8 @@ import Router from 'vue-router'
 // import Home from '@/components/Home'
 // import Boys from '@/components/boys'
 // import List from '@/components/List'
-const Boys = () => import(/*webpackChunkName: "Boys"*/'@/components/boys');
+const Boys = () => import(/*webpackChunkName: "Boys"*/'@/components/home/boys');
+const Girls = () => import(/*webpackChunkName: "Girls"*/'@/components/home/girls');
 const List = () => import(/*webpackChunkName: "List"*/'@/components/List');
 import StartPage from '@/components/StartPage'
 
@@ -20,6 +21,11 @@ export default new Router({
       path: '/boys',
       name: 'boys',
       component: Boys
+    },
+    {
+      path: '/girls',
+      name: 'girls',
+      component: Girls
     },
     {
       path: '/list',

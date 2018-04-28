@@ -1,5 +1,5 @@
 <template>
-    <header :class="header ">
+    <header class="header">
         <div class="left">
             <font-icon id="icon--xinxi" class="icon"></font-icon>
         </div>

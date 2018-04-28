@@ -18,16 +18,6 @@
           <img v-lazy="ad.img" alt="">
         </router-link>
       </section>
-      <!-- <section class="hot_brand">
-        <h3>热门品类</h3>
-        <ul>
-          <li v-for="navLink in nav" :key="navLink.id">
-            <router-link :to="'/list/'+navLink.type">
-              <img :src="'static/img/'+navLink.img" alt="">
-            </router-link>
-          </li>
-        </ul>
-      </section> -->
       <HotCategory :HotCategory=HotCategory />
       <div class="h14"></div>
       <SlideShow :banner=banner />
@@ -46,7 +36,6 @@
 <script>
 import axios from 'axios'
 import SlideShow from './SlideShow'
-import Footer from './Footer'
 import HotCategory from './Hot-category'
 import HotBrand from './Hot-brand'
 import HotRecommended from './Hot-recommended'
@@ -60,13 +49,6 @@ export default {
           HotCategory: [],
           HotBrand: [],
           icon_list: [],
-          pathName: [
-            {'url': '/boys', "title": '首页', "path": "home", "icon": "icon-shouye"},
-            {'url': '/list', "title": '分类', "path": "list", "icon": "icon-biaoqian" },
-            {'url': '/shop', "title": '逛', "path": "shop", "icon": "icon-sousuo" },
-            {'url': '/cart', "title": '购物车', "path": "cart", "icon": "icon-gouwuche" },
-            {'url': '/mine', "title": '我的', "path": "mine", "icon": "icon-wo" },
-          ]
       }
   },
   mounted() {
@@ -98,7 +80,6 @@ export default {
   },
   components: {
     'SlideShow': SlideShow,
-    'Footer': Footer,
     'HotCategory': HotCategory,
     'HotBrand': HotBrand,
     'HotRecommended': HotRecommended,

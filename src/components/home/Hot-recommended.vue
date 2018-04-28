@@ -71,7 +71,7 @@ export default {
       height: 8rem;
   }
   .hot_recommended ul {
-      overflow-x: scroll;
+      overflow-x: auto;
       overflow-y: hidden;
       white-space:nowrap;
   }

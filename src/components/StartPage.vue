@@ -53,7 +53,11 @@ export default {
         // 利用时间改变session的type值
         getType (type) {
             this.$store.commit('getType',type)
-            // window.sessionStorage.setItem('type',type);
+            if ( type == 'boys' ) {
+                this.$router.push({path:'/boys'});
+            }else if ( type == 'girls' ) {
+                this.$router.push({path:'/girls'});
+            }
         }
     },
     mounted() {
